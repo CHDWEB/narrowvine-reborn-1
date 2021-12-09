@@ -56,7 +56,7 @@ def empty_folder(folder):
   
 def download_drm_content(mpd_url):    
     print("[info] Downloading..")
-    subprocess.run([XstreamDLexe, mpd_url, '--select', '-name', 'encrypted', '-save-dir', cachePath, '--enable-auto-delete', '--limit-per-host', '100'])
+    subprocess.run([XstreamDLexe, mpd_url, '--select', '--name', 'encrypted', '--save-dir', cachePath, '--enable-auto-delete', '--limit-per-host', '100'])
     os.chdir(cachePath)
     for filename in os.listdir("."):
         if filename.startswith("encrypted_audio"):
